@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 import pandas as pd
 
-# Sample feature data: Normally you'd extract from PE files or logs
 df = pd.read_csv("malware_dataset.csv")  # Columns: feature1, feature2, ..., label
 
 X = df.drop("label", axis=1)
@@ -75,7 +74,6 @@ def extract_features(password):
         bool(re.search(r"[!@#$%^&*()]", password))
     ]
 
-# Sample passwords with labels (0=weak, 1=medium, 2=strong)
 data = [
     ("12345", 0), ("Password1", 1), ("S#perS3cur3!", 2),
 ]
